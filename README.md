@@ -40,11 +40,11 @@ The -nosim flag exists to reduce the possibility of an accidental uninstallation
 The -verbose option turns on some (extremely) rudimentary error reporting.  
 
 ## METHODOLOGY ##
-Iterate "Uninstall" registry subkeys within the following key(s):
-- HKLM:\software\microsoft\windows\currentversion\uninstall
-- HKLM:\software\wow6432node\microsoft\windows\currentversion\uninstall 
+- Iterate "Uninstall" registry subkeys within the following key(s):
++ HKLM:\software\microsoft\windows\currentversion\uninstall
++ HKLM:\software\wow6432node\microsoft\windows\currentversion\uninstall 
        (on 64-bit systems)
-Check the given search term against the name of the software package.  If
+- Check the given search term against the name of the software package.  If
 a package matches the term, list it on screen.  If the -u flag is provided,
 uninstall the program using one of the methods below, in order of preference:
   1. (MSI installers only) Execute MsiExec with the /quiet flag
