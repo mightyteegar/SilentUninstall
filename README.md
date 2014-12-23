@@ -2,10 +2,13 @@ SilentUninstall
 ===============
 
 NAME: SilentUninstall.ps1
-SYNOPSIS: Uninstall one or more programs given a search query
-COPYRIGHT: Dave Baker, 2014
-LICENSE: 
 
+SYNOPSIS: Uninstall one or more programs given a search query
+
+COPYRIGHT: (c) 2014 Dave Baker, teegar (AT) gmail
+
+LICENSE: You may freely use and modify this script as you like to suit your own needs.
+You may not distribute the script unless given explicit permission by the author.  
 
 SYNTAX
 SilentUninstall.ps1 <search> [-u] [-nosim] [-verbose]
@@ -63,7 +66,3 @@ of known programs and corresponding "silent" switches for their uninstall
 executables.  This script could be used in conjunction with an RMM platform
 such as Kaseya or N-Able, to automate uninstalls without interrupting or
 requiring input from the end user.  
-
-
-
->
