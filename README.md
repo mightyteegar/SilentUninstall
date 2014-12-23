@@ -10,12 +10,13 @@ COPYRIGHT: (c) 2014 Dave Baker, teegar (AT) gmail
 LICENSE: You may freely use and modify this script as you like to suit your own needs.
 You may not distribute the script unless given explicit permission by the author.  
 
-SYNTAX
-SilentUninstall.ps1 <search> [-u] [-nosim] [-verbose]
+## SYNTAX ##
+
+     SilentUninstall.ps1 <search> [-u] [-nosim] [-verbose]
 
 Search terms with multiple words should be enclosed in quotes -- examples:
-> SilentUninstall.ps1 cisco
-> SilentUninstall.ps1 "cisco anyconnect"   
+     SilentUninstall.ps1 cisco
+     SilentUninstall.ps1 "cisco anyconnect"   
 
 Searches are for EXACT terms, so a search for "Microsoft Office" would return 
 "Microsoft Office 2013" and "Update for Microsoft Office", but NOT "Microsoft
@@ -28,18 +29,17 @@ be uninstalled.
 Provide the -u flag to SIMULATE uninstalling all found programs. To actually perform
 an uninstall, add the -nosim flag. **WARNING: Use with caution -- there is NO confirmation!**
 
-> SilentUninstall.ps1 cisco -u          -- SIMULATES uninstalling EVERY program found with  
+     SilentUninstall.ps1 cisco -u          -- SIMULATES uninstalling EVERY program found with  
                                         the word "cisco" in the name, one at a time.
 
-> SilentUninstall.ps1 cisco -u -nosim   -- ACTUALLY uninstalls EVERY program found with the word 
+     SilentUninstall.ps1 cisco -u -nosim   -- ACTUALLY uninstalls EVERY program found with the word 
                                         "cisco" in the name, one at a time.
 
 The -nosim flag exists to reduce the possibility of an accidental uninstallation.  
 
 The -verbose option turns on some (extremely) rudimentary error reporting.  
 
-
-METHODOLOGY
+## METHODOLOGY ##
 Iterate "Uninstall" registry subkeys within the following key(s):
 - HKLM:\software\microsoft\windows\currentversion\uninstall
 - HKLM:\software\wow6432node\microsoft\windows\currentversion\uninstall 
@@ -55,7 +55,7 @@ uninstall the program using one of the methods below, in order of preference:
      "silent" uninstall switches and use the appropriate switch if a
      recognized program is found, e.g. Steam or VLC)
 
-PURPOSE
+## PURPOSE ##
 The ultimate goal of this script is to uninstall programs silently, e.g.
 without any GUI feedback or user intervention.  MSI-installed programs
 are of course easy to uninstall silently; the trickier part is accomplishing
